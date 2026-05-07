@@ -19,7 +19,7 @@
     </div>
 
     <div class="col-span-12 xl:col-span-7">
-      <x-ecommerce.recent-orders />
+      <x-ecommerce.recent-orders :products="$products" />
     </div>
   </div>
 @endsection

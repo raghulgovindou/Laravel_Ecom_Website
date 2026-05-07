@@ -148,6 +148,7 @@
                                         <div x-show="isSubmenuOpen({{ $groupIndex }}, {{ $itemIndex }}) && ($store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen)">
                                             <ul class="mt-2 space-y-1 ml-9">
                                                 @foreach ($item['subItems'] as $subItem)
+                                              <!-- <pre>{{ print_r($subItem, true) }}</pre> -->
                                                     <li>
                                                         <a href="{{ $subItem['path'] }}" class="menu-dropdown-item"
                                                             :class="isActive('{{ $subItem['path'] }}') ?

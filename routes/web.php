@@ -2,17 +2,40 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OrderController;
 
 // dashboard pages
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [ProductController::class, 'index']);
+});
 Route::get('/', function () {
-    return view('pages.dashboard.ecommerce', ['title' => 'E-commerce Dashboard']);
-})->name('dashboard');
+    return redirect('/signin');
+});
+Route::post('/create-order', [OrderController::class, 'createOrder']);
+Route::post('/payment-success', [OrderController::class, 'paymentSuccess']);
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+//product search
+Route::get('/search-products', [ProductController::class, 'search']);
+Route::get('/products-list', [ProductController::class, 'list']); 
 // calender pages
 Route::get('/calendar', function () {
     return view('pages.calender', ['title' => 'Calendar']);
 })->name('calendar');
-
+//edit-btn
+Route::post('/update-item/{id}', [ProductController::class, 'update']);
+Route::middleware(['auth', 'admin'])->group(function () {
+Route::get('/edit-item/{id}',[ProductController::class, 'edit']);
+});
+//add data
+Route::middleware(['auth', 'admin'])->group(function () {
+Route::post('/add-item',[ProductController::class, 'additems']);
+});
+Route::delete('/delete-item/{id}',[ProductController::class, 'deleteitem']);
 // profile pages
 Route::get('/profile', function () {
     return view('pages.profile', ['title' => 'Profile']);

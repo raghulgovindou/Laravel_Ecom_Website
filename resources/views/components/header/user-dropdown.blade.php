@@ -108,7 +108,7 @@
         </ul>
 
         <!-- Sign Out -->
-        {{-- <form method="POST" action="#">
+        {{-- <form method="POST" action="{{ route('logout') }}">
             @csrf --}}
             <a
                 href="/signin"
