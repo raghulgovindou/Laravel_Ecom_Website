@@ -1,3 +1,15 @@
+#SIMPLE OVER VIEW
+
+Laravel E-Commerce Website
+
+Developed a full-stack e-commerce application using Laravel (MVC architecture)
+Implemented Admin and User roles with session-based authentication and middleware
+Integrated OTP verification for secure user registration
+Added payment gateway integration for order processing
+Built responsive UI using Tailwind CSS
+Designed API-driven backend with AJAX for seamless, no page reload experience
+
+
 # TailAdmin Laravel - Tailwind CSS Free Laravel Dashboard
 
 **TailAdmin Laravel** is a modern, production-ready admin dashboard template powered by **Laravel 12**, **Tailwind CSS v4**, **Alpine.js**, and a clean, modular architecture. TailAdmin is one of the most popular Tailwind CSS dashboard now also available for Larvael. It’s designed for building fast, scalable admin panels, CRM dashboards, SaaS backends, and any data-driven application where clarity and performance matter.
